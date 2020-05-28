@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <h1>Vue new page</h1>
   </div>
 </template>
