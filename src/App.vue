@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <component :is="layout">
-    </component>
+    <h1>Vue new page</h1>
   </div>
 </template>
 
 <script>
 
-  const default_layout = "default";
-  export default {
-      computed: {
-          layout() {
-              return (this.$route.meta.layout || default_layout) + '-layout';
-          }
-      }
+
+export default {
+  name: 'App',
+  components: {
+    
   }
+}
 </script>
+
+<style>
+
+</style>
