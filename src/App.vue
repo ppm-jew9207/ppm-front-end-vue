@@ -5,7 +5,7 @@
     </b-container>
     <b-container tag="main" class="flex-grow-1">
       
-      cia galima deti visa kita 
+      <my-hw msg="Laimonas" />
 
     </b-container> 
     <b-container tag="footer" class="bg-primary py-5">
