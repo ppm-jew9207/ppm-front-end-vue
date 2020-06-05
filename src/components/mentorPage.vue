@@ -21,6 +21,7 @@ export default {
 components: {
     post,numberBlock
   }
+  
 }
 </script>
 
