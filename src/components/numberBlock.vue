@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style>
-
+.pagination{
+margin-top: 31px;
+margin-bottom: 31px;}
 </style>
