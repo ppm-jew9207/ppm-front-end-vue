@@ -1,41 +1,28 @@
 <template>
-  <div id="app">
-     <div class="grid-container">
-      <div class="grid-item">Header</div>
-      <div class="grid-item">Main</div>
-      <div class="grid-item">Footer</div>
-    </div> 
+  <div id="app" class="min-vh-100 d-flex flex-column">
+    <b-container tag="header" class="bg-primary py-5">
+      <!-- Header -->   
+    </b-container>
+    <b-container tag="main" class="flex-grow-1">  
+      <!-- Main block  -->
+
+    </b-container> 
+    <b-container tag="footer" class="bg-primary py-5">
+      <!-- Footer -->
+    </b-container>
   </div>
 </template>
 
 <script>
 
-
 export default {
   name: 'App',
   components: {
-    
+
   }
 }
 </script>
 
-<style>
-/* .grid-container {
-  display: grid;
-} */
-.grid-container {
-  display: grid;
-  grid-template-columns: 620px;
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
-  justify-content: center;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-}
+<style lang="scss">
+  @import 'assets/scss/style.scss';
 </style>
