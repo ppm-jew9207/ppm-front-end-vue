@@ -78,9 +78,10 @@ export default {
   text-align: center;
 }
 .registracijosForma {
-  width: 450px;
+  max-width: 450px;
   text-align: center;
-  margin-left: 332px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 61px;
   margin-bottom: 42px;
 }
