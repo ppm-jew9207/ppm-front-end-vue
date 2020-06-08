@@ -22,7 +22,6 @@ target/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
 build/
@@ -35,3 +34,11 @@ build/
 
 ### npm ###
 node_modules/
+#src/
+#public
+#.idea
+#.vscode
+#README.md
+#package.json
+#package-lock.json
+#babel.config.js
