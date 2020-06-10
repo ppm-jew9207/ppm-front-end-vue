@@ -4,8 +4,7 @@
       <!-- Header -->   
     </b-container>
     <b-container tag="main" class="flex-grow-1">  
-      <!-- Main block  -->
-
+      <router-view></router-view>
     </b-container> 
     <b-container tag="footer" class="bg-primary py-5">
       <!-- Footer -->
