@@ -4,8 +4,7 @@
       <!-- Header -->
     </b-container>
     <b-container tag="main" class="flex-grow-1">
-      <!-- <router-view></router-view> -->
-      <mentorProfile />
+      <router-view></router-view>
     </b-container>
     <b-container tag="footer" class="bg-primary py-5">
       <!-- Footer -->
@@ -14,10 +13,9 @@
 </template>
 
 <script>
-import mentorProfile from "../src/components/mentorProfile.vue";
 export default {
   name: "App",
-  components: { mentorProfile }
+  components: {}
 };
 </script>
 
