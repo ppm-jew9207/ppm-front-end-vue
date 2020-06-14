@@ -1,8 +1,247 @@
-<template></template>
+<template>
+  <div>
+    <form autocomplete="off" class="form">
+      <div class="control">
+        <h1>Sign In</h1>
+      </div>
+      <div class="control block-cube block-input">
+        <input name="username" v-model="form.username" placeholder="Username" type="text" />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <div class="control block-cube block-input">
+        <input name="password" v-model="form.password" placeholder="Password" type="password" />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <button class="btn block-cube block-cube-hover" type="submit">
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="text">Log In</div>
+      </button>
+    </form>
+  </div>
+</template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      form: {
+        username: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+    }
+  }
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+$bg_body: rgb(33, 33, 33);
+$bg_gradient_last_color: rgba(0, 212, 255, 1);
+$bg_gradient: linear-gradient(
+  90deg,
+  rgba(2, 0, 36, 1) 0%,
+  rgba(52, 9, 121, 1) 37%,
+  $bg_gradient_last_color 94%
+);
+
+body {
+  background-color: $bg_body;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+.form {
+  width: 300px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+  .control {
+    margin: 0 0 24px;
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-family: monospace, serif;
+      letter-spacing: 0.05em;
+      font-size: 16px;
+      &:hover,
+      &:focus {
+        outline: none;
+        border: 0;
+      }
+    }
+  }
+  .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+  }
+}
+
+.block-cube {
+  position: relative;
+  .bg-top {
+    position: absolute;
+    height: 10px;
+    background: rgb(2, 0, 36);
+    background: $bg_gradient;
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+    .bg-inner {
+      bottom: 0;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(2, 0, 36);
+    background: $bg_gradient;
+  }
+  .bg-right {
+    position: absolute;
+    background: rgb(2, 0, 36);
+    background: rgba(0, 212, 255, 1);
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+    .bg-inner {
+      left: 0;
+    }
+  }
+  .bg {
+    .bg-inner {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .bg-inner {
+    background: $bg_body;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+  }
+  .text {
+    position: relative;
+    z-index: 2;
+  }
+  &.block-input {
+    input {
+      position: relative;
+      z-index: 2;
+      &:focus ~ .bg-right .bg-inner,
+      &:focus ~ .bg-top .bg-inner,
+      &:focus ~ .bg-inner .bg-inner {
+        top: 100%;
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .bg-top,
+    .bg-right,
+    .bg {
+      background: rgba(255, 255, 255, 0.5);
+      transition: background 0.2s ease-in-out;
+    }
+    .bg-right,
+    .bg-top {
+      .bg-inner {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    &:focus,
+    &:hover {
+      .bg-top,
+      .bg-right,
+      .bg {
+        background: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+  // State hover, focus
+  &.block-cube-hover:focus,
+  &.block-cube-hover:hover {
+    .bg {
+      .bg-inner {
+        top: 100%;
+      }
+    }
+  }
+}
+
+.credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 15px 15px;
+  width: 100%;
+  z-index: 111;
+
+  a {
+    opacity: 0.6;
+    color: #fff;
+    font-size: 11px;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
 </style>
