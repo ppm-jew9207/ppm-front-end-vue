@@ -4,22 +4,17 @@
       <!-- Header -->
     </b-container>
     <b-container tag="main" class="flex-grow-1">
-      <app-login></app-login>
-      <!-- Main block  -->
+      <router-view></router-view>
     </b-container>
     <b-container tag="footer" class="bg-primary py-5">
       <!-- Footer -->
     </b-container>
   </div>
 </template>
-
 <script>
-import Login from "./components/Login.vue";
 export default {
   name: "App",
-  components: {
-    appLogin: Login
-  }
+  components: {}
 };
 </script>
 
